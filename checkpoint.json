@@ -1,0 +1,37 @@
+{
+  "checkpoint_date": "2026-11-14",
+  "status": "verified_complete_formalization",
+  "full_theorem_for_stated_samplers": true,
+  "source_modules_checked": 89,
+  "audit_modules_checked": 2,
+  "declarations_axiom_audited": 10868,
+  "source_audit_project_files": 91,
+  "source_audit_imported_TauCeti_modules": 472,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "lean": "4.36.0-rc1",
+  "mathlib": "2cabef97b63d3275776b8b060d802de6a6fa1055",
+  "TauCeti": "a7aa188e650fba2aaa9a62178202af132a5515e0",
+  "principal_theorems": [
+    "EndToEnd.full_attack_certificate",
+    "EndToEndFamilies.family_advantage_not_negligible",
+    "RationalAttack.signed_gap_lower"
+  ],
+  "sampler_scope": {
+    "maps": "Actual rational isogenies over the p^2-element field, retaining their normalized Montgomery target coefficients",
+    "degree_first_completion": "Return failure only for cyclic-component degree C=B; retain every C<B outcome, including noncyclic raw degree-B maps",
+    "target_first_completion": "Return failure on an empty connecting fiber without resampling the target",
+    "normalization": "Retain the original laws without conditioning on success"
+  },
+  "representation_interface": "Definition 2.11 public degree-decoder correctness and polynomial charged-work contract; no concrete HD validator or Turing-machine simulation is claimed",
+  "scope_document": "GEOMETRY_STATUS.md",
+  "integrated_verification_log": "verification.log",
+  "fresh_kernel_replay": {
+    "status": "interrupted_without_result",
+    "exit_code": 130,
+    "counted_as_passed": false
+  }
+}

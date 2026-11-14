@@ -1,0 +1,6 @@
+Optional exhaustive kernel replay
+Command: sh scripts/check-kernel.sh
+Status: interrupted at the requested checkpoint (exit 130).
+Elapsed seconds: 720
+No result was obtained; this replay is NOT counted as passed.
+The complete project build and declaration-wide axiom audit passed; see verification.log.

@@ -1,0 +1,339 @@
+Already checked IsogenyAttack.Kernels
+Already checked IsogenyAttack.LatticeKernels
+Already checked IsogenyAttack.FiniteTorsionKernels
+Already checked IsogenyAttack.Vendor.Iut.Torsion.Identities
+Already checked IsogenyAttack.Vendor.Iut.Torsion.EDS
+Already checked IsogenyAttack.TorsionPolynomialBounds
+Already checked IsogenyAttack.Vendor.Iut.Torsion.Count
+Already checked IsogenyAttack.Vendor.EllipticCurves.Torsion.AbelianStructure
+Already checked IsogenyAttack.TorsionStructure
+Already checked IsogenyAttack.EllipticKernels
+Already checked IsogenyAttack.Probability
+Already checked IsogenyAttack.Bounds
+Already checked IsogenyAttack.Weights
+Already checked IsogenyAttack.Sampler
+Already checked IsogenyAttack.Euler
+Already checked IsogenyAttack.WeightSeries
+Already checked IsogenyAttack.Normalizer
+Already checked IsogenyAttack.Attack
+Already checked IsogenyAttack.TargetSampler
+Already checked IsogenyAttack.StationaryGeometry
+Already checked IsogenyAttack.LegendreCurve
+Already checked IsogenyAttack.LegendreDistribution
+Already checked IsogenyAttack.HassePolynomial
+Already checked IsogenyAttack.StationaryRootLaw
+Already checked IsogenyAttack.FiniteLawPushForward
+Already checked IsogenyAttack.Experiments
+Already checked IsogenyAttack.ActualKernelSampler
+Already checked IsogenyAttack.Asymptotics
+Already checked IsogenyAttack.BitComplexity
+Already checked IsogenyAttack.CharacteristicTorsion
+Already checked IsogenyAttack.CurveAutomorphisms
+Already checked IsogenyAttack.JFibers
+Already checked IsogenyAttack.HasseSymmetry
+Already checked IsogenyAttack.JFiberOrbit
+Already checked IsogenyAttack.StationaryIdentification
+Already checked IsogenyAttack.HasseCriterion
+Already checked IsogenyAttack.HasseCoefficientIteration
+Already checked IsogenyAttack.HassePointCount
+Already checked IsogenyAttack.HasseFiniteDescent
+Already checked IsogenyAttack.HasseSupersingular
+Already checked IsogenyAttack.VeluQuotient
+Already checked IsogenyAttack.ScalarQuotient
+Already checked IsogenyAttack.ScalarStripGeometry
+Already checked IsogenyAttack.CyclicComponent
+Already checked IsogenyAttack.MontgomeryGeometry
+Already checked IsogenyAttack.GeometricMultiplicity
+Already checked IsogenyAttack.IsogenySampler
+Already checked IsogenyAttack.RawDegreeSampler
+Already checked IsogenyAttack.HasseSampler
+Already checked IsogenyAttack.FullArithmeticAttack
+Already checked IsogenyAttack.GenuineAttack
+Already checked IsogenyAttack.FrobeniusFixedField
+Already checked IsogenyAttack.SupersingularDescent
+Already checked IsogenyAttack.MontgomeryTorsion
+Already checked IsogenyAttack.MontgomeryDescent
+Already checked IsogenyAttack.MontgomeryStationary
+Already checked IsogenyAttack.FiniteMontgomerySampler
+Already checked IsogenyAttack.RawTargetSampler
+Already checked IsogenyAttack.GenuineExperiments
+Already checked IsogenyAttack.ResponseCutoff
+Already checked IsogenyAttack.Pushforward
+Already checked IsogenyAttack.IsogenyPush
+Checking IsogenyAttack.PublicObservation
+Checking IsogenyAttack.RawSamplerAttack
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/RawSamplerAttack.lean:52:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/RawSamplerAttack.lean:53:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Already checked IsogenyAttack.RawDegreeGeometry
+Already checked IsogenyAttack.RawTargetGeometry
+Already checked IsogenyAttack.MaximalityArithmetic
+Already checked IsogenyAttack.FrobeniusScalar
+Already checked IsogenyAttack.FrobeniusSign
+Already checked IsogenyAttack.LegendreFourTorsion
+Already checked IsogenyAttack.LegendreMaximal
+Already checked IsogenyAttack.MontgomeryLegendre
+Already checked IsogenyAttack.IsogenyDescent
+Already checked IsogenyAttack.MontgomeryMorphismDescent
+Checking IsogenyAttack.PublicFullAttack
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/PublicFullAttack.lean:110:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/PublicFullAttack.lean:112:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/PublicFullAttack.lean:121:0: warning: automatically included section variable(s) unused in theorem `IsogenyAttack.PublicFullAttack.source_cutoff`:
+  [Fact (Nat.Prime p)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fact (Nat.Prime p)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Checking IsogenyAttack.RawExperiments
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/RawExperiments.lean:95:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/RawExperiments.lean:98:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Checking IsogenyAttack.HintContinuation
+Checking IsogenyAttack.SourceEndpoint
+Checking IsogenyAttack.TranscriptEncoding
+Checking IsogenyAttack.PushedEncoding
+Checking IsogenyAttack.EndToEnd
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/EndToEnd.lean:76:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/EndToEnd.lean:77:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Checking IsogenyAttack.EndToEndFamilies
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/EndToEndFamilies.lean:24:0: warning: automatically included section variable(s) unused in theorem `IsogenyAttack.EndToEndFamilies.cutoffValidity`:
+  [∀ (n : ℕ), IsAlgClosed (K n)]
+  [∀ (n : ℕ), NeZero 2]
+  [∀ (n : ℕ), Algebra.IsAlgebraic (ZMod (p n)) (K n)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [∀ (n : ℕ),
+  IsAlgClosed (K n)] [∀ (n : ℕ), NeZero 2] [∀ (n : ℕ), Algebra.IsAlgebraic (ZMod (p n)) (K n)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/Users/zeno/Desktop/Lean/Isogeny/lean_certificate/IsogenyAttack/EndToEndFamilies.lean:86:0: warning: automatically included section variable(s) unused in theorem `IsogenyAttack.EndToEndFamilies.work_le_polynomial_security`:
+  [∀ (n : ℕ), Fact (Nat.Prime (p n))]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [∀ (n : ℕ), Fact (Nat.Prime (p n))] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Already checked IsogenyAttack.Endpoint
+Already checked IsogenyAttack.RationalMapSampler
+Already checked IsogenyAttack.RationalTargetMembership
+Already checked IsogenyAttack.RationalRawSampler
+Checking IsogenyAttack.RationalAttack
+Already checked IsogenyAttack.Vendor.Iut.Torsion.Divisible
+Checking IsogenyAttack
+'IsogenyAttack.HNF.strip_content' depends on axioms: [propext, Quot.sound]
+'IsogenyAttack.HNF.degree_eq_content_sq_mul_strip' depends on axioms: [propext, Quot.sound]
+'IsogenyAttack.HNF.scalar_unique' depends on axioms: [propext, Quot.sound]
+'IsogenyAttack.HNF.bounded_card_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.degree_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.liftIndex_card_twice' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.sigmaOne_le_printedWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.printedWeightAF_eq_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.normalizedConvolutionWeight_sum_le_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.normalizer_le_four_mul_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.kernel_weight_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.printedLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.publicTest_spec' depends on axioms: [propext, Quot.sound]
+'IsogenyAttack.attack_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.not_negligible_of_attack_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.elliptic_torsion_rank_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.elliptic_kernel_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.elliptic_scalar_stripping' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.elliptic_kernel_code_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.Legendre.hasseInvariantLaw_eq_reciprocal_aut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.Legendre.hasLegendreHasseZero_iff_j_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.GeometricMultiplicity.card_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.GeometricMultiplicity.uniform_realization_family' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IsogenyAttack.ArithmeticAttack.finite_attack_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.ArithmeticAttack.family_attack_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.ArithmeticAttack.eventual_family_advantage_not_negligible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IsogenyAttack.actualPrintedLaw_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.actual_hasse_samplers_attack' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.Endpoint.odd_split_zero_complement_probability_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IsogenyAttack.Legendre.isSupersingular_iff_j_mem_hasse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.MontgomeryStationary.parameterLaw_j_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.MontgomeryStationary.card_parameterLocus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.card_frobeniusFixedField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.supersingular_j_pow_square_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.supersingular_j_mem_quadraticField' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.quotientIsogeny_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.quotientIsogeny_point_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.quotientCurve_supersingular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.quotientJClass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.ScalarQuotient.exists_scalar_component_same_j' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.EndToEnd.full_attack_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.EndToEndFamilies.family_advantage_not_negligible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'IsogenyAttack.RationalAttack.signed_gap_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.RationalAttack.public_finite_attack' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.SourceEndpoint.signed_gap_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.Montgomery.isogeny_descends' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.PushedEncoding.sourceDegreeChannel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsogenyAttack.TranscriptEncoding.acceptance_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+IsogenyAttack.attack_correct.{u_1, u_2} {α : Type u_1} {τ : Type u_2} [Fintype α] [Fintype τ] {B s : ℕ}
+  (S : IsogenyAttack.FiniteLaw α) (target : α → τ) (codomain : IsogenyAttack.HNF → τ)
+  (componentS : α → Option IsogenyAttack.HNF) (observedU : IsogenyAttack.BoundedKernel B → Option ℕ) (p : ℝ)
+  (hs : 784 ≤ s) (hp : 49 ≤ p) (hB : 8 * s ^ 2 ≤ B) (hcut : ↑B ^ 2 < 4 * p)
+  (htarget : ∀ (x : α) (k : IsogenyAttack.HNF), componentS x = some k → target x = codomain k)
+  (hpoint : ∀ (t : τ), (S.eventMass fun x => target x = t) ≤ 12 / (p - 1))
+  (hobserved : ∀ (k : IsogenyAttack.BoundedKernel B), (↑k).degree < B → observedU k = some (↑k).cyclicDegree) :
+  1 / (1024 * ↑s ^ 3) ≤
+    |((IsogenyAttack.printedLaw B ⋯).eventMass fun k => IsogenyAttack.publicTest B s (observedU k) = true) -
+        S.eventMass fun x => IsogenyAttack.publicTest B s (Option.map IsogenyAttack.HNF.degree (componentS x)) = true|
+IsogenyAttack.ArithmeticAttack.finite_attack_certificate.{u_1, u_2} {K : Type u_1} {ι : Type u_2} [Field K]
+  [DecidableEq K] [IsAlgClosed K] [Fintype ι] (P : IsogenyAttack.FiniteLaw ι) (p : ℕ) [CharP K p] [Fact (Nat.Prime p)]
+  {B s : ℕ} (hs : 784 ≤ s) (hp : 49 ≤ p) (hB : 8 * s ^ 2 ≤ B) (hcut : ↑B ^ 2 < 4 * ↑p)
+  (codomain : ι → IsogenyAttack.HNF → IsogenyAttack.Legendre.HasseJClass ((p - 1) / 2)) :
+  1 / (1024 * ↑s ^ 3) ≤
+      IsogenyAttack.ArithmeticAttack.signedGap P (IsogenyAttack.Legendre.hasseInvariantLaw p ⋯) B s ⋯ codomain ∧
+    (∀ (k : IsogenyAttack.BoundedKernel B),
+        (IsogenyAttack.ArithmeticAttack.decision B s (IsogenyAttack.ArithmeticAttack.degreeObservation k)).work ≤
+          8192 * (2 * B.size + s.size + 1) ^ 2 + 1) ∧
+      ∀ (i : ι) (x : IsogenyAttack.TargetOutcome B (codomain i)),
+        (IsogenyAttack.ArithmeticAttack.decision B s
+              (Option.map IsogenyAttack.HNF.degree (IsogenyAttack.targetComponent x))).work ≤
+          8192 * (2 * B.size + s.size + 1) ^ 2 + 1
+IsogenyAttack.ArithmeticAttack.family_attack_certificate.{u_1, u_2} (K : ℕ → Type u_1) [(n : ℕ) → Field (K n)]
+  [(n : ℕ) → DecidableEq (K n)] [∀ (n : ℕ), IsAlgClosed (K n)] (ι : ℕ → Type u_2) [(n : ℕ) → Fintype (ι n)]
+  (p B : ℕ → ℕ) [∀ (n : ℕ), CharP (K n) (p n)] [∀ (n : ℕ), Fact (Nat.Prime (p n))] (hp : ∀ (n : ℕ), 49 ≤ p n)
+  (hB : ∀ (n : ℕ), 8 * (n + 784) ^ 2 ≤ B n) (P : (n : ℕ) → IsogenyAttack.FiniteLaw (ι n))
+  (codomain : (n : ℕ) → ι n → IsogenyAttack.HNF → IsogenyAttack.Legendre.HasseJClass ((p n - 1) / 2))
+  (hparameters : ∃ N, ∀ n ≥ N, ↑(B n) ^ 2 < 4 * ↑(p n) ∧ (p n).size ≤ n) :
+  (¬IsogenyAttack.IsNegligible fun n => |IsogenyAttack.ArithmeticAttack.familySignedGap K ι p B hp hB P codomain n|) ∧
+    ∃ N,
+      ∀ n ≥ N,
+        (∀ (k : IsogenyAttack.BoundedKernel (B n)),
+            (IsogenyAttack.ArithmeticAttack.decision (B n) (n + 784)
+                  (IsogenyAttack.ArithmeticAttack.degreeObservation k)).work ≤
+              8192 * (3 * n + 787) ^ 2 + 1) ∧
+          ∀ (i : ι n) (x : IsogenyAttack.TargetOutcome (B n) (codomain n i)),
+            (IsogenyAttack.ArithmeticAttack.decision (B n) (n + 784)
+                  (Option.map IsogenyAttack.HNF.degree (IsogenyAttack.targetComponent x))).work ≤
+              8192 * (3 * n + 787) ^ 2 + 1
+IsogenyAttack.elliptic_scalar_stripping.{u_1} {K : Type u_1} [Field K] [NeZero 2] [IsAlgClosed K]
+  {W : WeierstrassCurve.Affine K} [WeierstrassCurve.IsElliptic W] (ha₁ : W.a₁ = 0) (ha₃ : W.a₃ = 0) {d : ℕ}
+  (hd : ↑d ≠ 0) (S : AddSubgroup W.Point) (hS : Nat.card ↥S = d) :
+  ∃ m c,
+    0 < m ∧
+      0 < c ∧
+        d = m ^ 2 * c ∧
+          AddSubgroup.torsionBy W.Point ↑m ≤ S ∧
+            (∀ (r : ℕ), 0 < r → r ∣ d → (AddSubgroup.torsionBy W.Point ↑r ≤ S ↔ r ∣ m)) ∧
+              Nat.card ↥(AddSubgroup.map (nsmulAddMonoidHom m) S) = c ∧
+                IsAddCyclic ↥(AddSubgroup.map (nsmulAddMonoidHom m) S)
+IsogenyAttack.actual_hasse_samplers_attack.{u_1} {K : Type u_1} [Field K] [NeZero 2] [IsAlgClosed K]
+  {W : WeierstrassCurve.Affine K} [WeierstrassCurve.IsElliptic W] (p : ℕ) [CharP K p] [Fact (Nat.Prime p)]
+  (ha₁ : W.a₁ = 0) (ha₃ : W.a₃ = 0) {B s : ℕ} (hs : 784 ≤ s) (hp : 49 ≤ p) (hB : 8 * s ^ 2 ≤ B) (hcut : ↑B ^ 2 < 4 * ↑p)
+  (codomain : AddSubgroup W.Point → IsogenyAttack.Legendre.HasseJClass ((p - 1) / 2)) :
+  have hdeg := ⋯;
+  1 / (1024 * ↑s ^ 3) ≤
+    |IsogenyAttack.actualPrintedAcceptance ha₁ ha₃ B hdeg ⋯ s -
+        IsogenyAttack.actualTargetAcceptance (IsogenyAttack.Legendre.hasseInvariantLaw p ⋯) ha₁ ha₃ B hdeg codomain s|
+IsogenyAttack.EndToEnd.full_attack_certificate.{u_1, u_2} {K : Type u_1} [Field K] [IsAlgClosed K] [NeZero 2] (p : ℕ)
+  [Fact (Nat.Prime p)] [CharP K p] [Algebra (ZMod p) K] [Algebra.IsAlgebraic (ZMod p) K] {ι : Type u_2} [Fintype ι]
+  (P : IsogenyAttack.FiniteLaw ι) (A X : ι → IsogenyAttack.FiniteMontgomerySampler.Parameters p) {s : ℕ} (hs : 784 ≤ s)
+  (hp : 49 ≤ p) (hB : 8 * s ^ 2 ≤ IsogenyAttack.ResponseCutoff.bound p)
+  (E : IsogenyAttack.PublicObservation.PolynomialDegreeDecoder)
+  (CU :
+    IsogenyAttack.PublicFullAttack.EncodingChannel E
+      (IsogenyAttack.EndToEnd.degreeObservation p ⋯ A (IsogenyAttack.ResponseCutoff.bound p) ⋯))
+  (CS :
+    IsogenyAttack.PublicFullAttack.EncodingChannel E
+      (IsogenyAttack.EndToEnd.targetObservation p ⋯ X (IsogenyAttack.ResponseCutoff.bound p) ⋯)) :
+  1 / (1024 * ↑s ^ 3) ≤
+      IsogenyAttack.EndToEnd.signedGap p P ⋯ A X (IsogenyAttack.ResponseCutoff.bound p) s ⋯ ⋯ E CU CS ∧
+    ∀ (D : Option (List Bool)),
+      (IsogenyAttack.PublicFullAttack.run E (IsogenyAttack.ResponseCutoff.bound p) s D).work ≤
+        (E.coefficient + 8192 * (E.coefficient + 1) ^ 2 + 2) *
+          ((IsogenyAttack.ResponseCutoff.bound p).size + s.size + (Option.map List.length D).getD 0 + 1) ^
+            (2 * (E.exponent + 1))
+IsogenyAttack.EndToEndFamilies.family_advantage_not_negligible.{u_1, u_2} (K : ℕ → Type u_1) [(n : ℕ) → Field (K n)]
+  [∀ (n : ℕ), IsAlgClosed (K n)] [∀ (n : ℕ), NeZero 2] (ι : ℕ → Type u_2) [(n : ℕ) → Fintype (ι n)] (p : ℕ → ℕ)
+  [∀ (n : ℕ), Fact (Nat.Prime (p n))] [∀ (n : ℕ), CharP (K n) (p n)] [(n : ℕ) → Algebra (ZMod (p n)) (K n)]
+  [∀ (n : ℕ), Algebra.IsAlgebraic (ZMod (p n)) (K n)] (hp : ∀ (n : ℕ), 49 ≤ p n)
+  (P : (n : ℕ) → IsogenyAttack.FiniteLaw (ι n))
+  (A X : (n : ℕ) → ι n → IsogenyAttack.FiniteMontgomerySampler.Parameters (p n))
+  (E : ℕ → IsogenyAttack.PublicObservation.PolynomialDegreeDecoder)
+  (CU :
+    (n : ℕ) →
+      IsogenyAttack.PublicFullAttack.EncodingChannel (E n)
+        (IsogenyAttack.EndToEnd.degreeObservation (p n) ⋯ (A n) (IsogenyAttack.ResponseCutoff.bound (p n)) ⋯))
+  (CS :
+    (n : ℕ) →
+      IsogenyAttack.PublicFullAttack.EncodingChannel (E n)
+        (IsogenyAttack.EndToEnd.targetObservation (p n) ⋯ (X n) (IsogenyAttack.ResponseCutoff.bound (p n)) ⋯))
+  (hgrowth : ∃ N, ∀ n ≥ N, 2 ^ n ≤ p n) :
+  ¬IsogenyAttack.IsNegligible fun n => |IsogenyAttack.EndToEndFamilies.familySignedGap K ι p hp P A X E CU CS n|
+IsogenyAttack.RationalAttack.public_finite_attack.{u_1} {K : Type u_1} [Field K] [IsAlgClosed K] [NeZero 2] (p : ℕ)
+  [Fact (Nat.Prime p)] [CharP K p] [Algebra (ZMod p) K] [Algebra.IsAlgebraic (ZMod p) K]
+  (a x : IsogenyAttack.RationalAttack.Parameter p) (hp4 : p % 4 = 3) {B s : ℕ} (hs : 784 ≤ s) (hp : 49 ≤ p)
+  (hB : 8 * s ^ 2 ≤ B) (hcut : ↑B ^ 2 < 4 * ↑p) (E : IsogenyAttack.PublicObservation.PolynomialDegreeDecoder)
+  (CU : IsogenyAttack.PublicFullAttack.EncodingChannel E (IsogenyAttack.RationalAttack.degreeObservation p ⋯ hp4 a B ⋯))
+  (CS :
+    IsogenyAttack.PublicFullAttack.EncodingChannel E (IsogenyAttack.RationalAttack.targetObservation p ⋯ hp4 x B ⋯)) :
+  have hdeg := ⋯;
+  1 / (1024 * ↑s ^ 3) ≤
+    IsogenyAttack.PublicFullAttack.acceptance (IsogenyAttack.RationalRawSampler.law p ⋯ hp4 a B hdeg ⋯) E
+        (IsogenyAttack.RationalAttack.degreeObservation p ⋯ hp4 a B hdeg) CU B s -
+      IsogenyAttack.PublicFullAttack.acceptance (IsogenyAttack.RationalMapSampler.quadraticTargetLaw p ⋯ hp4 x B hdeg) E
+        (IsogenyAttack.RationalAttack.targetObservation p ⋯ hp4 x B hdeg) CS B s
+Audited 10868 project and imported TauCeti declarations. Axioms: [propext, Classical.choice, Quot.sound]
+All 89 source modules and both audits passed.

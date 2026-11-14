@@ -1,0 +1,16 @@
+name = "isogeny-attack-certificate"
+version = "2.0.0"
+defaultTargets = ["IsogenyAttack"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "2cabef97b63d3275776b8b060d802de6a6fa1055"
+
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti"
+rev = "a7aa188e650fba2aaa9a62178202af132a5515e0"
+
+[[lean_lib]]
+name = "IsogenyAttack"

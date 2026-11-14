@@ -1,0 +1,283 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\Prob}{\mathop{\rm Pr}}
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\id}{\operatorname{id}}
+\begin{document}
+\begin{center}
+{\large\bfseries A degree distinguisher for SQIsign hint distributions}\\[3pt]
+{\small Exact finite theorem and accompanying Lean definitions}
+\end{center}
+\vspace{-0.6em}
+
+The attack distinguishes the stationary-target and degree-weighted hint laws in
+\emph{A Complete Security Proof of SQIsign}~\cite{proof}, in the supplied revision dated
+August 1, 2025. It reads one public isogeny degree and tests whether it is small.
+The statement below fixes the raw-morphism counting convention and explicitly
+completes sampling steps that otherwise may fail.
+
+\paragraph{Curves, maps, and scalar stripping.}
+Let $p\ge49$ be prime with $p\equiv3\pmod4$, put $k=\F_{p^2}$, and write
+\[
+ E_A:\ y^2=x^3+Ax^2+x,\qquad
+ \mathcal M_p=\{A\in k:A^2\ne4,\ E_A\text{ supersingular}\}.
+\]
+An isogeny is an actual pointed algebraic morphism over $k$, with its target
+coefficient $A$ retained. Distinct morphisms to the same equation are counted
+separately; neither post-isomorphism classes nor representation strings are sampled.
+Set
+\begin{align*}
+e&=\min\{r\in\N:p\le4^r\}, &
+B&=2^e=2^{\lceil\log_2\sqrt p\rceil},\\
+W(d)&=\prod_{\ell^a\parallel d}(\ell+1)^a, &
+Z(B)&=\sum_{d=1}^B W(d).
+\end{align*}
+In particular $p<B^2<4p$ and $B<p$. All maps of degree at most $B$ are separable.
+
+If $\varphi:X\to Y$ has degree $d\le B$ and kernel $K$, its scalar content is the
+largest positive divisor $m$ of $d$ for which $X[m]\subseteq K$. There is a unique
+isogeny $\chi:X\to Y$ with
+\[
+ \varphi=\chi\circ[m]_X=[m]_Y\circ\chi,\qquad
+ \ker\chi=[m]_X K,\qquad C:=\deg\chi=d/m^2,
+\]
+and $\ker\chi$ is cyclic. Thus stripping preserves the actual target, not just
+its geometric $j$-invariant.
+
+\paragraph{The two total finite experiments.}
+Fix supersingular normalized Montgomery curves $X_U,X_S$ over $k$; they need not
+be equal. Define the optional degree observations $U$ and $S$ as follows.
+\begin{itemize}
+\item $U$: draw $d\in\{1,\ldots,B\}$ with probability $W(d)/Z(B)$, then draw uniformly
+from all raw degree-$d$ isogenies $X_U\to E_A$, $A\in\mathcal M_p$.
+Compute the cyclic-component degree $C$. Return $\bot$ only if $C=B$, the
+zero-complementary-degree case. Otherwise return $C$; in particular, retain
+noncyclic raw degree-$B$ maps whose cyclic component has degree $C<B$.
+\item $S$: draw $A$ uniformly from $\mathcal M_p$, then uniformly select a raw
+isogeny $X_S\to E_A$ of degree $<B$. An empty connecting fiber returns $\bot$
+without resampling $A$. Otherwise return its cyclic-component degree $C$.
+\end{itemize}
+Both experiments keep their full original normalizers. In particular failure
+is not followed by conditioning on success. Replacing only the $C=B$ failure
+by any other output cannot decrease acceptance; the bound below also covers
+such non-resampling completions retaining every valid $C<B$ output. For a successful degree
+$C=2^n c$ with $c$ odd, the complementary degree in Experiment~3 and Algorithm~5
+is $B/2^n-c$: it is a positive integer because $C<B$. The subsequent cyclic
+isogeny can therefore be sampled from a nonempty finite set.
+
+\begin{theorem}[Finite raw-morphism distinguishing theorem]\label{thm:finite}
+Under these conventions, let $s\ge784$ be an integer satisfying $8s^2\le B$, and set
+\[
+ L=\left\lfloor\frac{B}{4s^2}\right\rfloor,\qquad
+ A_{B,s}(C)=\begin{cases}1&C\in\N\text{ and }C\le L,\\0&C=\bot\text{ or }C>L.\end{cases}
+\]
+Then, for every pair $X_U,X_S$ as above,
+\begin{equation}\label{eq:main}
+ \Prob[A_{B,s}(U)=1]-\Prob[A_{B,s}(S)=1]
+ \ \ge\ \frac1{1024s^3}.
+\end{equation}
+The same signed bound holds after averaging over any common finite public-context
+law that chooses $X_U$ and $X_S$. It also holds after arbitrary randomized
+continuations and valid encodings that preserve the observed optional degree.
+For any transcript of $q\ge1$ hints, the test uses only the first hint. Later
+challenges and hints may be sampled with arbitrary conditional randomness
+preserving that first observation; failures remain per-hint failure symbols.
+
+Suppose the exposed component has an efficient representation in the sense of
+Definition~2.11 of~\cite{proof}: a polynomial-time public validator returns its
+actual degree, and representation lengths are polynomially bounded in the public
+parameter lengths. Then the test, including degree extraction, runs in polynomial
+time. Algorithm~6 preserves the degree of the first exposed component, so the same
+bound applies after that push whenever it is performed on the successful hint.
+\end{theorem}
+
+The source curves in Experiment~4 have different roles: $X_U$ is the public-key
+curve before pushing, while $X_S$ is the challenge codomain in the simulated
+experiment. The theorem's two-source formulation is what permits averaging over
+the public key and challenge. The event-probability advantage is the absolute
+difference of acceptance probabilities;~\eqref{eq:main} proves its sign as well.
+Success above $1/2$ in the corresponding fair-bit guessing game is half this gap.
+
+\paragraph{Geometry and the exact sampling multiplicities.}
+For $d<p$, the actual elliptic torsion is
+$X[d]\cong(\Z/d\Z)^2$. Finite-subgroup classification by Hermite normal form (HNF)
+therefore gives exactly
+\[
+ \sigma_1(d)=\sum_{a\mid d}a
+\]
+order-$d$ kernels. Write an HNF as $(a,e,b)$ with $a,e>0$, $0\le b<a$, and
+$ae=d$. Its content is $m=\gcd(a,e,b)$, and division by $m$ gives a primitive
+HNF, hence a cyclic subgroup. In the elliptic point group the stripped subgroup
+is $[m]K$, of order $d/m^2$. Moreover $X[r]\subseteq K$ if and only if $r\mid m$
+for positive $r\mid d$; for any positive $r$ prime to $p$, full torsion
+contained in $K$ necessarily has $r^2\mid d$. Actual isogeny factorization through $[m]$, and surjectivity of
+$[m]$ on geometric points, identify this subgroup with $\ker\chi$.
+
+A supersingular geometric class has respectively $2,3,6$ normalized Montgomery
+parameters when $j=0$, $j=1728$, or otherwise. Its automorphism group has
+respectively $6,4,2$ elements. Each fixed kernel consequently has exactly $12$
+raw quotient morphisms when all Montgomery targets are counted. For a fixed
+target equation, the number is $|\Aut(E_A)|$, independently of the kernel.
+Thus raw uniform sampling induces uniform kernel sampling, both degree by degree
+and within each nonempty target fiber.
+
+These are also the counts over $k$, not merely over $\overline{\F}_p$.
+Geometric supersingular normalized Montgomery parameters lie in $k$; for
+$p\equiv3\pmod4$ their $p^2$-Frobenius is $[-p]$, and they have $(p+1)^2$ rational
+points. Any geometric isogeny between these models commutes with their common
+scalar Frobenius and descends uniquely to $k$. One descent proof expresses a
+function as $u(x)+yv(x)$: coefficient-Frobenius invariance fixes the normalized
+numerators and denominators of $u,v$, whose coefficients then lie in $k$.
+Consequently commutation with Frobenius gives Galois-equivariant pullbacks and
+actual morphism descent.
+
+The Hasse polynomial $H(T)=\sum_i\binom{(p-1)/2}{i}^{\!2}T^i$ has simple roots
+and describes the supersingular Legendre locus. Its fiber counts, or equivalently
+the Montgomery parameter counts above, give the stationary geometric-class law
+\begin{equation}\label{eq:stationary}
+ \mu(j)=\frac{24}{(p-1)|\Aut(E_j)|}\le\frac{12}{p-1}.
+\end{equation}
+This is precisely the $j$-marginal of uniform sampling from $\mathcal M_p$.
+The descent and scalar-factorization statements are essential: equality of
+$j$-invariants alone would not identify the raw finite-field samplers.
+
+\begin{lemma}[Weight and normalizer bounds]\label{lem:weight}
+For every $d\ge1$ and $B\ge1$,
+$W(d)\ge\sigma_1(d)$ and $Z(B)\le4B^2$.
+\end{lemma}
+\begin{proof}
+At a prime power the binomial theorem gives
+$(\ell+1)^a\ge1+\ell+\cdots+\ell^a$; multiply over primes.
+Let $g$ be multiplicative, with $g(1)=1$ and $g(\ell^a)=(\ell+1)^{a-1}$ for
+$a\ge1$. The identity
+\[
+ (\ell+1)^a=\ell^a+\sum_{j=1}^a\ell^{a-j}(\ell+1)^{j-1}
+\]
+gives $W=\id*g$. Hence
+\[
+ Z(B)=\sum_{n\le B}g(n)\sum_{k\le B/n}k
+ \le B^2\sum_{n\le B}\frac{g(n)}{n^2}.
+\]
+The nonnegative Euler factors are
+$\sum_{a\ge0}g(\ell^a)/\ell^{2a}=1+1/(\ell^2-\ell-1)$.
+The factor at $2$ is $2$, and for $n\ge3$,
+\[
+ 1+\frac1{n^2-n-1}\le\frac{(n-1)^2}{n(n-2)}.
+\]
+Bounding prime factors by all integer factors and telescoping gives
+$2\prod_{n=3}^B (n-1)^2/[n(n-2)]=4(B-1)/B<4$ for $B\ge3$.
+The cases $B=1,2$ are immediate.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:finite}]
+More generally, let $L,M\ge1$ and $M^2L<B$, and use $U\le L$ or $S\le L$
+to denote a nonfailure degree at most $L$. Acceptance in the target-first
+experiment forces its target to be the codomain of a cyclic map of degree at most
+$L$. Scalar stripping preserves that target, so at most
+\[
+ \sum_{c=1}^L\sigma_1(c)=\sum_{a=1}^L a\left\lfloor\frac La\right\rfloor\le L^2
+\]
+target classes can be accepted. Equation~\eqref{eq:stationary} yields
+$\Prob[S\le L]\le12L^2/(p-1)$.
+This upper bound even permits an arbitrary conditional connecting-map law.
+
+For $U$, consider the distinct HNFs
+\[
+ (a,e,b)=(mc,m,mt),\qquad
+ 1\le m\le M,\quad1\le c\le L,\quad0\le t<c.
+\]
+Each has degree $m^2c<B$, content exactly $m$, and cyclic-component degree $c$;
+they remain distinct when their original degrees coincide. The $c$ kernels in a
+fixed $(m,c)$ category contribute probability
+\[
+ \frac{W(m^2c)}{Z(B)}\frac{c}{\sigma_1(m^2c)}
+ \ge\frac{c}{4B^2}.
+\]
+The raw morphism multiplicity $12$ cancels. Summation gives
+\[
+ \Prob[U\le L]\ge\frac{ML(L+1)}{8B^2},\qquad
+ \Prob[U\le L]-\Prob[S\le L]
+ \ge\left(\frac M8-49\right)\frac{L^2}{B^2},
+\]
+since $12B^2/(p-1)<48p/(p-1)\le49$. Every favorable category has raw degree
+$d<B$. Discarding all raw degree-$B$ outputs is therefore a conservative lower
+bound; restoring its valid noncyclic outputs can only increase acceptance.
+The full normalizer proves the bound for failure only at $C=B$, and for any
+further non-resampling completion of that sole invalid case.
+
+Now take $M=s$ and $L=\lfloor B/(4s^2)\rfloor$. The hypotheses imply
+$B/(8s^2)\le L\le B/(4s^2)$, $s^2L<B$, and $s/8-49\ge s/16$.
+The last display is at least
+$(s/16)(1/(64s^4))=1/(1024s^3)$.
+The bound is uniform in both source curves, so averaging its signed form over a
+common public context preserves it. Appending data or encoding a map does not
+change any test on its preserved degree. Algorithm~6's final splitting retains
+both exposed component degrees. Its odd-kernel push preserves cardinality and
+cyclicity by the actual dual-isogeny identities and coprimality with the
+power-of-two challenge.
+
+For public extraction, run the validator of Definition~2.11 on the first exposed
+component representation, reject failure, and test $4s^2C\le B$ on its binary
+degree. This is exactly $C\le L$ and requires only polynomial-time arithmetic
+in addition to the stipulated polynomial-time validator.
+\end{proof}
+
+\paragraph{Asymptotic consequence and scope.}
+For a family with a fixed polynomial-time validator, polynomially bounded
+representation lengths and $\log p$ in a security parameter $\lambda$, and
+$B\ge8(\lambda+784)^2$ eventually, choose $s=\lambda+784$.
+One hint gives inverse-polynomial advantage $1/[1024(\lambda+784)^3]$.
+For example $p\ge2^\lambda$ eventually supplies the threshold condition.
+Thus computational indistinguishability fails for these precisely specified
+hint laws and valid public representations. This is a distinguishing attack,
+not a forgery or an endomorphism-ring algorithm. It does not contradict a
+reduction that explicitly retains a hint-distinguishing advantage term.
+The statement does not replace either sampling law by uniform sampling of
+representation strings, and it does not silently condition empty fibers or
+endpoint failures away.
+
+\paragraph{Lean correspondence.}
+\begingroup\raggedright
+The certificate's definitions retain actual point subgroups, V\'elu function-field
+isogenies, normalized finite-field coefficients, and raw morphisms.
+\texttt{ScalarStripGeometry} and \texttt{CyclicComponent} connect HNF content to
+actual same-target factorization. \texttt{MontgomeryDescent},
+\texttt{MontgomeryLegendre}, \texttt{IsogenyDescent}, and
+\texttt{MontgomeryMorphismDescent} supply parameter descent, negative scalar
+Frobenius, and morphism descent. \texttt{RawDegreeSampler},
+\texttt{RawTargetSampler}, and \texttt{RawTargetGeometry} specify the raw laws,
+empty fibers, and actual component observation; \texttt{RawSamplerAttack} gives
+the signed interior lower bound and averaging over two source curves.
+\texttt{SourceEndpoint} transfers it to the source law retaining all valid
+noncyclic endpoint outcomes and failing exactly when $C=B$.
+\texttt{RationalAttack} states the bound on literal finite-field map laws.
+\texttt{PushedEncoding} and \texttt{TranscriptEncoding} connect actual pushes
+and arbitrary fresh later hints to the first public observation.
+\texttt{EndToEnd} and \texttt{EndToEndFamilies} provide the finite public
+certificate and encoded-family nonnegligibility theorem.
+\texttt{ResponseCutoff} identifies the integer cutoff with the printed ceiling,
+and \texttt{PublicObservation} composes a polynomial degree decoder with the
+verified binary comparison. Its work bound concerns an explicit charged
+Boolean/list computation model; the degree decoder is a representation
+interface, not an asserted implementation of an arbitrary external encoding.
+The build and axiom-audit reports accompany the Lean sources; verification is
+performed on the named declarations and their dependencies.
+\par\endgroup
+
+\begin{thebibliography}{1}
+\bibitem{proof}
+M.~A.~Aardal, A.~Basso, L.~De~Feo, S.~Patranabis, and B.~Wesolowski.
+\emph{A Complete Security Proof of SQIsign}.
+IACR ePrint 2025/379, supplied revision dated August 1, 2025.
+\url{https://eprint.iacr.org/2025/379}.
+\end{thebibliography}
+\end{document}
